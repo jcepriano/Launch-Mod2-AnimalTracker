@@ -1,4 +1,4 @@
-# Mod2 Week2 Assessment - <YOUR NAME HERE>
+# Mod2 Week2 Assessment - James Cepriano
 
 ## Setup
 1. Fork this repository.
@@ -13,9 +13,17 @@
 
 1. What does TDD stand for?
 
+TDD stands for Test Driven Development. It is the process of writing out tests before creating the class for that test.
+
 1. What are three benefits of using TDD?
 
+a. Using TDD makes it more likely that a developer does not write code they don't need
+b. It can help reduce the chance of creating bugs and make it unlikely that a finished program would be pushed out with a bug
+c. Helps the developer plan out exactly what they want a class to do
+
 1. Imagine you are in an interview.  The interviewer asks: How do you use TDD? How would you answer?
+
+When approaching a new program using the TDD process, I plan out what my code should accomplish and create unit tests that reflect what I want my classes to do in my program.
 
 1. For the class below, outline the tests you would need.  Try to use as much C# syntax as possible. The first test has been provided for you. (this question is worth 4 points)
 ```c#
@@ -58,13 +66,53 @@ public void DogHasNameAttribute()
 
     Assert.Equal("Nile", dog.Name);
 }
+
+[Fact]
+public void Dog_Eat_BoolOutputsFalse()
+{
+       Dog dog = new Dog("Nile", "Golden Retriever");
+       dog.IsHungry = true;
+
+       dog.Eat();
+
+       Assert.Equal(false, dog.IsHungry);
+}
+
+[Fact]
+public void Dog_Sleep_BoolOutputsTrue()
+{
+       Dog dog = new Dog("Nile", "Golden Retriever");
+       dog.IsHungry = false;
+
+       dog.Sleep();
+
+       Assert.Equal(true, dog.IsHungry);
+}
+
+[Fact]
+public void Dog_Speak_ReturnsString
+{
+       Dog dog = new Dog("Nile", "Golden Retriever");
+
+       dog.Speak();
+
+       Assert.Equal(dog.Speak, "Bark Bark!");
+}
+
 ```
 
 5. What is a merge conflict, and when might you encounter one?
 
+A merge conflict is when a new version of a file can't be merged because the older and newer file have conflicting lines of code. You might encounter this when working on a program with multiple people.
+
 1. You and a partner are working on a project together.  Your partner is working on aa-branch; you are working on bb-branch.  In as much detail as possible, describe how you both would get your work combined onto the main branch.
 
+We would create branches on our own systems and build the program in our branches. We would then commit changes we've made and push it to github. We would both create pull requests and fix any merge conflicts if there were any.
+We would then merge the pull requests and pull the main branch to our computers.
+
 1. Why is it good practice to have someone else approve and/or merge your PR?  
+
+Someone else might find something in the pr that does not work or fit in the program. It would be better to have a second opinion on any code that has been written.
   
 **Before moving on to the next section, commit your work and push your main branch!**
   
